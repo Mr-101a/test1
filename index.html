@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ربات نصیحت‌گو 🤖</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      color: white;
+    }
+    .card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    button {
+      background: #ff6b6b;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: transform 0.2s;
+    }
+    button:hover { transform: scale(1.05); }
+    #advice {
+      font-size: 22px;
+      min-height: 80px;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🤖 ربات نصیحت‌گو</h1>
+    <p>روی دکمه بزن تا نصیحت بگیریا</p>
+    <div id="advice">منتظرم...</div>
+    <button onclick="getAdvice()">نصیحت جدید بده!</button>
+  </div>
+
+  <script>
+    const advices = [
+      "امروز یه کار کوچیک خوب انجام بده 💪",
+      "آب زیاد بنوش، مغزت بهتر کار می‌کنه 💧",
+      "اگه خستی، ۵ دقیقه استراحت کن و دوباره شروع کن ⏳",
+      "لبخند بزن، حال بقیه هم بهتر می‌شه 😊",
+      "کد بنویس، باگ پیدا کن، دوباره کد بنویس 🔁",
+      "خواب کافی مهم‌تر از همه چیزه 😴",
+      "با دوستات حرف بزن، تنهایی سخته 🤝"
+    ];
+
+    function getAdvice() {
+      const random = advices[Math.floor(Math.random() * advices.length)];
+      document.getElementById('advice').innerText = random;
+    }
